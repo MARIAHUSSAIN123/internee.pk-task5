@@ -1,0 +1,33 @@
+body{
+    background-image: url(./th.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+   
+}
+
+.container {
+    width: 80%;
+    margin: 40px auto;
+    text-align: center;
+    background-color: rgb(134, 104, 8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 0 10px rgba(0,0,0,0.2);
+    transition: background-color 0.5s ease-in-out;
+}
+
+.weather-details {
+    margin-top: 20px;
+}
+
+#weather-icon {
+    width: 50px;
+    height: 50px;
+}
+.btn{
+    background-color: black;
+    color: bisque;
+}
+
