@@ -10,7 +10,7 @@ const errorMessage = document.getElementById('error-message');
 searchBtn.addEventListener('click', fetchWeather);
 
 function fetchWeather() {
-    const city = cityInput.value;
+    const city = cityInput.value.trim(); // Trim the city name to remove extra spaces
     const apiKey = '3ab13b4c4cb22c40f550c010bcb327aa';
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
@@ -19,6 +19,7 @@ function fetchWeather() {
         .then(data => {
             if (data.cod === '404') {
                 errorMessage.textContent = 'City not found!';
+                weatherIcon.src = ''; // Clear the icon when city is not found
             } else {
                 cityName.textContent = data.name;
                 temperature.textContent = `Temperature: ${data.main.temp}°C`;
@@ -30,6 +31,8 @@ function fetchWeather() {
         })
         .catch(error => {
             errorMessage.textContent = 'Error fetching weather data!';
+            weatherIcon.src = ''; // Clear the icon when there is an error
         });
 }
+
 
